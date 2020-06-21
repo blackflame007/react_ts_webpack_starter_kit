@@ -1,0 +1,51 @@
+// MEDIA QUERY MANAGER (Desktop First)
+/*
+0 - 600px: Phone
+600 - 900px: Tablet
+900 - 1200px: Tablet landscape
+[1200 -1800] is where our normal styles apply
+1800px +: Big Desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-lan
+- big-desktop
+ em works better then rem on media queries
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == smallest-phone {
+    @media only screen and (max-width: $bp-smallest) {
+      @content;
+    } //200px
+  }
+  @if $breakpoint == smaller-phone {
+    @media only screen and (max-width: $bp-smaller) {
+      @content;
+    } //400px
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: $bp-small) {
+      @content;
+    } //600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: $bp-medium) {
+      @content;
+    } //800px
+  }
+
+  @if $breakpoint == tab-lan {
+    @media only screen and (max-width: $bp-large) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (max-width: $bp-largest) {
+      @content;
+    } //1800px
+  }
+}

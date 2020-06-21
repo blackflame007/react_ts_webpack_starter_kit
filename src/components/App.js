@@ -1,9 +1,10 @@
 import React from "react";
+import "./sass/main.scss";
 
 const App = () => {
   return (
-    <div>
-      <h1>WebPack!!</h1>
+    <div className="box">
+      <h1>WebPack!!!</h1>
     </div>
   );
 };
