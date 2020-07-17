@@ -78,6 +78,10 @@ module.exports = (env, options) => {
         },
       ],
     },
+    devServer: {
+      historyApiFallback: true,
+      stats: "minimal",
+    },
     plugins: [
       new CleanWebpackPlugin({
         verbose: true,
